@@ -17,7 +17,7 @@ builder.Services.AddOptions<CarrierOptions>()
         x => (!string.IsNullOrWhiteSpace(x.ApiUrl)) && (!string.IsNullOrWhiteSpace(x.Username)) && (!string.IsNullOrWhiteSpace(x.Pass)),
         "There are problems with your Carrier configurations, pls check it...");
 
-// we also can validate using a OptionValidate class as below
+// we also can validate using an OptionValidate class as below
 // this validation will happen at the stratup time! (Avoiding surprises \o/)
 builder.Services.AddOptions<DatabaseOptions>()
     .Bind(builder.Configuration.GetSection("Database"))
