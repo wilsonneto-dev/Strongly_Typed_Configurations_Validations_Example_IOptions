@@ -1,7 +1,7 @@
 # Validating Strongly Typed Configurations (IOptions)
 
 .Net 6 brings us some cool ways to validate the options, lazy or eager...
-So, here are some examples on how to validate the strongly typed configuration
+So, here are some examples on how to validate it
 
 ```csharp
 // we can validate with data annotations
