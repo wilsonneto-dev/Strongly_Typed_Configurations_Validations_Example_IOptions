@@ -5,12 +5,12 @@ So, here are some examples on how to validate the strongly typed configuration
 
 ```csharp
 // we can validate with data annotations
-// the below validation will happens when we try to access it, not at startup
+// the below validation will happen when we try to access it, not at the startup
 builder.Services.AddOptions<RabbitOptions>()
     .Bind(builder.Configuration.GetSection("Rabbit"))
     .ValidateDataAnnotations();
 
-// we can use a method for the validation, this validation will happens when we try to access it
+// we can use a method for the validation, this validation will happen when we try to access it
 builder.Services.AddOptions<CarrierOptions>()
     .Bind(builder.Configuration.GetSection("Carrier"))
     .Validate(
@@ -18,7 +18,7 @@ builder.Services.AddOptions<CarrierOptions>()
         "There are problems with your Carrier configurations, pls check it...");
 
 // we also can validate using a OptionValidate class as below
-// this validation will happens at the stratup time!
+// this validation will happen at the stratup time! (Avoiding surprises \o/)
 builder.Services.AddOptions<DatabaseOptions>()
     .Bind(builder.Configuration.GetSection("Database"))
     .ValidateOnStart();
