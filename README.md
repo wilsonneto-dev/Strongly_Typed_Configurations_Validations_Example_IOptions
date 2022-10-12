@@ -14,7 +14,7 @@ builder.Services.AddOptions<RabbitOptions>()
 builder.Services.AddOptions<CarrierOptions>()
     .Bind(builder.Configuration.GetSection("Carrier"))
     .Validate(
-        x => (!string.IsNullOrWhiteSpace(x.ApiUrl)) && (!string.IsNullOrWhiteSpace(x.Username)) && (!string.IsNullOrWhiteSpace(x.Pass)),
+        x => (!string.IsNullOrWhiteSpace(x.ApiUrl)) || (!string.IsNullOrWhiteSpace(x.Username)) || (!string.IsNullOrWhiteSpace(x.Pass)),
         "There are problems with your Carrier configurations, pls check it...");
 
 // we also can validate using an OptionValidate class as below
